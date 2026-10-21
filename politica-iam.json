@@ -1,0 +1,35 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PruebaDeVida",
+      "Effect": "Allow",
+      "Action": [
+        "rekognition:CreateFaceLivenessSession",
+        "rekognition:GetFaceLivenessSessionResults",
+        "rekognition:StartFaceLivenessSession"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ColeccionDeCaras",
+      "Effect": "Allow",
+      "Action": [
+        "rekognition:CreateCollection",
+        "rekognition:DescribeCollection",
+        "rekognition:DeleteCollection",
+        "rekognition:IndexFaces",
+        "rekognition:SearchFacesByImage",
+        "rekognition:ListFaces",
+        "rekognition:DeleteFaces"
+      ],
+      "Resource": "arn:aws:rekognition:*:*:collection/marca-flexi-poc"
+    },
+    {
+      "Sid": "LlavesTemporalesParaLaCamara",
+      "Effect": "Allow",
+      "Action": "sts:GetFederationToken",
+      "Resource": "*"
+    }
+  ]
+}
